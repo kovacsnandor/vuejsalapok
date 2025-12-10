@@ -1,11 +1,19 @@
 <script setup></script>
 
 <template>
-  <h1>You did it!xxxyy</h1>
-  <p>
-    Visit <a href="https://vuejs.org/" target="_blank" rel="noopener">vuejs.org</a> to read the
-    documentation
-  </p>
+  <h1>Vue alkalmazás</h1>
+  <!-- menü -->
+  <ul>
+    <li>
+      <RouterLink to="/">Home</RouterLink>
+    </li>
+    <li>
+      <RouterLink to="/about">About</RouterLink>
+    </li>
+  </ul>
+
+  <!-- Ide töltődnek be az oldalak -->
+   <RouterView/>
 </template>
 
 <style scoped></style>
