@@ -7,7 +7,10 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: HomeView
+      component: HomeView,
+      meta:{
+        title: (route) => 'Home'
+      }
     },
     {
       path: '/about',
@@ -15,9 +18,25 @@ const router = createRouter({
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import('@/views/AboutView.vue')
-    }
+      component: () => import('@/views/AboutView.vue'),
+      meta:{
+        title: (route) => 'About'
+      }
+    },
+    { path: "/:pathMatch(.*)*", 
+      name: "NotFound", 
+      component: () => import('@/views/404.vue'),
+      meta:{
+        title: (route) => '404'
+      }
+    },
   ],
 })
+
+router.beforeEach((to,from, next) => {
+  document.title = 'Valami - ' + to.meta.title(to);
+  //mehetsz tovább az oldalra
+  next();
+});
 
 export default router
