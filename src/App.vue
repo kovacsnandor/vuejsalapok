@@ -2,7 +2,7 @@
 
 <template>
   <!-- Head -->
-  <h1>Vue alkalmazás</h1>
+  <h1>Vue alkalmazás Tanár</h1>
 
   <!-- Menü -->
   <ul>
