@@ -17,15 +17,5 @@
 </template>
 
 <style>
-.my-container {
-  max-width: 1200px;
-}
 
-.my-border {
-  border: 1px dashed black;
-}
-
-.my-pointer {
-  cursor: pointer;
-}
 </style>
