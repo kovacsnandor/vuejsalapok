@@ -11,6 +11,7 @@
       </ul>
       <hr>
       <ul>
+        <li>{{ programName }}</li>
         <li>{{ title }}</li>
         <li>Version: {{ ver }}</li>
         <li>API url: {{ apiUrl }}</li>
@@ -31,6 +32,7 @@ export default {
       ssr: import.meta.env.SSR,
       mode: import.meta.env.MODE,
       title: import.meta.env.VITE_APP_TITLE,
+      programName: import.meta.env.VITE_APP_PROGRAM_NAME,
       ver: import.meta.env.VITE_APP_VER,
       apiUrl: import.meta.env.VITE_API_URL
     }

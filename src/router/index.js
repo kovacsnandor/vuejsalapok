@@ -95,7 +95,8 @@ const router = createRouter({
 })
 
 router.beforeEach((to,from, next) => {
-  document.title = 'Valami - ' + to.meta.title(to);
+  const programName = import.meta.env.VITE_APP_TITLE;
+  document.title = `${programName} - ` + to.meta.title(to);
   //mehetsz tovább az oldalra
   next();
 });
