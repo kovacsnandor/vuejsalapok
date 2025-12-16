@@ -15,12 +15,73 @@ const router = createRouter({
     {
       path: '/about',
       name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
       component: () => import('@/views/AboutView.vue'),
       meta:{
         title: (route) => 'About'
+      }
+    },
+    {
+      path: '/computed',
+      name: 'computed',
+      component: () => import('@/views/ComputedView.vue'),
+      meta:{
+        title: (route) => 'Computed'
+      }
+    },
+    {
+      path: '/cssbinding',
+      name: 'cssbinding',
+      component: () => import('@/views/CssBindingView.vue'),
+      meta:{
+        title: (route) => 'Cssbinding'
+      }
+    },
+    {
+      path: '/databind',
+      name: 'databind',
+      component: () => import('@/views/DatabindView.vue'),
+      meta:{
+        title: (route) => 'Databind'
+      }
+    },
+    {
+      path: '/vfor',
+      name: 'vfor',
+      component: () => import('@/views/VforView.vue'),
+      meta:{
+        title: (route) => 'Vfor'
+      }
+    },
+    {
+      path: '/vif',
+      name: 'vif',
+      component: () => import('@/views/VifView.vue'),
+      meta:{
+        title: (route) => 'Vif'
+      }
+    },
+    {
+      path: '/von',
+      name: 'von',
+      component: () => import('@/views/VonView.vue'),
+      meta:{
+        title: (route) => 'Von'
+      }
+    },
+    {
+      path: '/vshow',
+      name: 'vshow',
+      component: () => import('@/views/VshowView.vue'),
+      meta:{
+        title: (route) => 'Vshow'
+      }
+    },
+    {
+      path: '/watch',
+      name: 'watch',
+      component: () => import('@/views/WatchView.vue'),
+      meta:{
+        title: (route) => 'Watch'
       }
     },
     { path: "/:pathMatch(.*)*", 
