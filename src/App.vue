@@ -6,10 +6,10 @@
     <h1>Vue alkalmazás Tanár</h1>
 
     <!-- Menü -->
-    <ul>
-      <li><RouterLink to="/">Home</RouterLink></li>
-      <li><RouterLink to="/about">About</RouterLink></li>
-    </ul>
+    <p>
+      <RouterLink to="/">Home</RouterLink> | 
+      <RouterLink to="/about">About</RouterLink>
+    </p>
 
     <!-- Ide töltődnek be az oldalak -->
     <RouterView />
