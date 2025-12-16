@@ -1,18 +1,31 @@
 <script setup></script>
 
 <template>
-  <!-- Head -->
-  <h1>Vue alkalmazás Tanár</h1>
+  <div class="container-fluid my-container my-border mt-5">
+    <!-- Head -->
+    <h1>Vue alkalmazás Tanár</h1>
 
-  <!-- Menü -->
-  <ul>
-    <li> <RouterLink to="/">Home</RouterLink> </li>
-    <li> <RouterLink to="/about">About</RouterLink> </li>
-  </ul>
+    <!-- Menü -->
+    <ul>
+      <li><RouterLink to="/">Home</RouterLink></li>
+      <li><RouterLink to="/about">About</RouterLink></li>
+    </ul>
 
-  <!-- Ide töltődnek be az oldalak -->
-   <RouterView/>
-   
+    <!-- Ide töltődnek be az oldalak -->
+    <RouterView />
+  </div>
 </template>
 
-<style scoped></style>
+<style>
+.my-container {
+  max-width: 1200px;
+}
+
+.my-border {
+  border: 1px dashed black;
+}
+
+.my-pointer {
+  cursor: pointer;
+}
+</style>
