@@ -58,11 +58,22 @@
         </select>
       </div>
       <div class="col-4 my-border p-2">
-        <h5>Multi Lista
-          <button type="button" class="btn btn-primary ms-2"
-          @click="onClickMultiListSizeButton(1)">+</button>
-          <button type="button" class="btn btn-primary ms-2"
-          @click="onClickMultiListSizeButton(-1)">-</button>
+        <h5>
+          Multi Lista
+          <button
+            type="button"
+            class="btn btn-primary ms-2"
+            @click="onClickMultiListSizeButton(1)"
+          >
+            +
+          </button>
+          <button
+            type="button"
+            class="btn btn-primary ms-2"
+            @click="onClickMultiListSizeButton(-1)"
+          >
+            -
+          </button>
         </h5>
         <select
           class="form-select"
@@ -83,15 +94,61 @@
       </div>
       <div class="col-4 my-border">
         <h5>CheckBox</h5>
-        Kenér: {{ kenyer }} | Kifli: {{ kifli }}
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            value=""
+            id="kenyer"
+            v-model="kenyer"
+          />
+          <label class="form-check-label" for="kenyer"> Kenyér </label>
+        </div>
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            value=""
+            id="kifli"
+            v-model="kifli"
+          />
+          <label class="form-check-label" for="kifli"> Kifli </label>
+        </div>
       </div>
       <div class="col-4 my-border">
         <h5>Radio button</h5>
-        {{ neme }}
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="neme"
+            id="fiu"
+            value="fiú"
+            v-model="neme"
+          />
+          <label class="form-check-label" for="fiu">
+            Fiú
+          </label>
+        </div>
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="neme"
+            id="lany"
+            value="lány"
+            v-model="neme"
+          />
+          <label class="form-check-label" for="lany">
+            Lány
+          </label>
+        </div>
       </div>
       <div class="col-4 my-border">
         <h5>Csúszka</h5>
-        {{ range }}
+        <input type="range" class="form-range" :min="min" :max="max" :step="step" id="csuszka"
+        v-model="range"
+        >
       </div>
     </div>
   </div>
@@ -115,10 +172,22 @@ export default {
     };
   },
   methods: {
-    onClickMultiListSizeButton(number){
-      this.sizeMultiList = Math.max(this.sizeMultiList + number, 2);
-    }
-  }
+    onClickMultiListSizeButton(number) {
+      const min = 2;
+      const max = 8;
+      this.sizeMultiList = this.sizeMultiList + number;
+
+      if (this.sizeMultiList > max) {
+        this.sizeMultiList = max;
+      }
+
+      if (this.sizeMultiList < min) {
+        this.sizeMultiList = min;
+      }
+
+      //this.sizeMultiList = Math.max(this.sizeMultiList + number, 2);
+    },
+  },
 };
 </script>
 
