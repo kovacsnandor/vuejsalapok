@@ -3,14 +3,14 @@
 <template>
   <div class="container-fluid my-container my-border mt-5">
     <!-- Head -->
-    <h1>Vue alkalmazás Tanár</h1>
+    <h1>Komponensek</h1>
 
     <!-- Menü -->
-    <ul>
-      <li><RouterLink to="/">Home</RouterLink></li>
-      <li><RouterLink to="/about">About</RouterLink></li>
-    </ul>
-
+      <p><RouterLink to="/">Home</RouterLink> | 
+        <RouterLink to="/about">About</RouterLink> | 
+        <RouterLink to="/globaliscomponent">Globális komponens</RouterLink>
+      </p>
+        
     <!-- Ide töltődnek be az oldalak -->
     <RouterView />
   </div>
