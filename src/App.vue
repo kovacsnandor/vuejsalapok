@@ -20,7 +20,7 @@
     </p>
     <hr>
     <!-- Ide töltődnek be az oldalak -->
-    <RouterView />
+    <RouterView class="my-border" ></RouterView>
   </div>
 </template>
 

@@ -15,20 +15,20 @@
     <h3>.prevent: Alapértelmezés letiltása</h3>
     <a href="https://www.google.com/" target="_blank">Google</a>
     <hr />
-    <a href="https://www.google.com/" @click.prevent="onClickLink()">
+    <a href="https://www.google.com/" @click="onClickLink()">
       Google linkje: {{ link }}
     </a>
 
     <h2>-stop: Buborékolás</h2>
+    <!-- szülő -->
     <button type="button" class="btn btn-success" @click="onClickButton()">
-      <!-- szülő -->
       {{ count }}
+      <!-- gyerek -->
       <button
         type="button"
         class="btn btn-danger"
         @click.stop="onClickButton()"
       >
-        <!-- gyerek -->
         {{ count }}
       </button>
     </button>

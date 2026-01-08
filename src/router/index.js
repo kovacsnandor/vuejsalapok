@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '@/views/HomeView.vue'
 
+
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -95,6 +96,9 @@ const router = createRouter({
 })
 
 router.beforeEach((to,from, next) => {
+  console.log('honnan:', from);
+  console.log('hova:', to);
+  
   const programName = import.meta.env.VITE_APP_TITLE;
   document.title = `${programName} - ` + to.meta.title(to);
   //mehetsz tovább az oldalra
