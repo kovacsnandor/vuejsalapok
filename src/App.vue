@@ -8,7 +8,9 @@
     <!-- Menü -->
       <p><RouterLink to="/">Home</RouterLink> | 
         <RouterLink to="/about">About</RouterLink> | 
-        <RouterLink to="/globaliscomponent">Globális komponens</RouterLink>
+        <RouterLink to="/globaliscomponent">Globális komponens</RouterLink> | 
+        <RouterLink to="/lokaliscomponent">Lokális komponens</RouterLink> | 
+        <RouterLink to="/componentkommunikacio">Komponens kommunikáció</RouterLink> | 
       </p>
         
     <!-- Ide töltődnek be az oldalak -->

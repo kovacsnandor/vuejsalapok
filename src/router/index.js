@@ -34,6 +34,28 @@ const router = createRouter({
         title: (route) => 'Globális komponens'
       }
     },
+    {
+      path: '/lokaliscomponent',
+      name: 'lokaliscomponent',
+      // route level code-splitting
+      // this generates a separate chunk (About.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import('@/views/LokalisComponentView.vue'),
+      meta:{
+        title: (route) => 'Lokális komponens'
+      }
+    },
+    {
+      path: '/componentkommunikacio',
+      name: 'componentkommunikacio',
+      // route level code-splitting
+      // this generates a separate chunk (About.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import('@/views/ComponentKommunikacioView.vue'),
+      meta:{
+        title: (route) => 'Komponens kommunikáció'
+      }
+    },
     { path: "/:pathMatch(.*)*", 
       name: "NotFound", 
       component: () => import('@/views/404.vue'),

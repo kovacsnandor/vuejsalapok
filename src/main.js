@@ -13,6 +13,7 @@ import "bootstrap-icons/font/bootstrap-icons.min.css"
 
 
 const app = createApp(App)
+//Ide olyat teszünk, amit gyakran használunk
 //Globális komponensek importja
 import DobozGlobalis from '@/components/dobozok/DobozGlobalis.vue'
 //Beteszi az alkalmazásba, innentől mindeni kasználhatja
