@@ -1,7 +1,7 @@
 <template>
-    <div class="my-doboz">
-    <h2>kicsoda </h2>
-    <p>Szülőtől: uzenetSzulotol </p>
+  <div class="my-doboz">
+    <h2>{{kicsoda}}</h2>
+    <p>Szülőtől: {{uzenetSzulotol}}</p>
     <!-- Üzenet írás -->
     <label for="uzenet" class="form-label">Írj egy választ</label>
     <div class="d-flex">
@@ -22,22 +22,28 @@
       </button>
     </div>
   </div>
-
 </template>
 
 <script>
 export default {
-    data() {
-        return {
-            uzenetSzulonek: null
-        }
+  props:{
+    kicsoda: {type: String, default: 'Valaki'},
+    uzenetSzulotol: {type: String, default: ''}
+  },
+  data() {
+    return {
+      uzenetSzulonek: '',
+    };
+  },
+  methods: {
+    onClickUzenetKuldButton() {
+      console.log("üzenet szülőnek", this.uzenetSzulonek);
+      //Kiváltjuk az eseményt
+      this.$emit("uzenetEsemeny", this.uzenetSzulonek)
+      
     },
-    methods: {
-        onClickUzenetKuldButton(){
-
-        }
-    }
-}
+  },
+};
 </script>
 
 <style scoped>

@@ -1,8 +1,8 @@
 <template>
   <div class="my-box" @click="counter++">
     <h3>Lokális komponens: {{ counter }}</h3>
-    <p>Engem globálisan deklaráltak a main.js-ben</p>
-    <p>Nem kell importálni, bárhonnan elérhető vagyok</p>
+    <p>Engem lokálisan deklaráltak a LokalisComponentView.vue-ban</p>
+    <p>Importálni, kell, csak itt vagyok elérhető</p>
   </div>
 </template>
 
