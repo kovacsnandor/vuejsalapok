@@ -24,13 +24,15 @@
           </button>
         </div>
         <!-- üzenet gyerektől -->
-         <p>Üzenet gyerektől: {{ uzenetGyerektol }}</p>
+        <p>Üzenet gyerektől: {{ uzenetGyerektol }}</p>
       </div>
       <!-- Üzenőfal -->
-       <div class="col">
+      <div class="col">
         <h2>
           Üzenőfal
-          <button type="button" class="btn btn-outline-danger"
+          <button
+            type="button"
+            class="btn btn-outline-danger"
             v-if="uzenetlista.length"
             @click="uzenetlista = []"
           >
@@ -40,13 +42,14 @@
         <p v-for="(uzenet, index) in uzenetlista" :key="index">
           {{ uzenet.kicsoda }}: {{ uzenet.uzenet }}
         </p>
-       </div>
+      </div>
 
       <!-- Gyerek elem -->
       <div class="col my-border">
         <h2>{{ titleGyerekek }}</h2>
-        <KommunikaloDoboz 
-          v-for="(gyerek, index) in gyerekek" :key="index"
+        <KommunikaloDoboz
+          v-for="(gyerek, index) in gyerekek"
+          :key="index"
           :kicsoda="gyerek"
           :uzenetSzulotol="uzenetGyereknek"
           @uzenetEsemeny="uzenetFogadHandler"
@@ -59,7 +62,7 @@
 <script>
 import KommunikaloDoboz from "@/components/kommunikaloDoboz/KommunikaloDoboz.vue";
 class Uzenet {
-  constructor(kicsoda = "", uzenet = ""){
+  constructor(kicsoda = "", uzenet = "") {
     this.kicsoda = kicsoda;
     this.uzenet = uzenet;
   }
@@ -76,41 +79,39 @@ export default {
       uzenetGyerektol: "",
       uzenetlista: [],
       uzenetObjektum: new Uzenet(),
-      gyerekek: [
-        "Pisti", 
-      "Áron", 
-      "Éva"
+      gyerekek: ["Pisti", 
+      // "Áron", 
+      // "Éva"
     ],
     };
   },
-  methods:{
-    onClickUzenetKuldButton(){
+  methods: {
+    onClickUzenetKuldButton() {
       console.log("üzenet gyereknek", this.uzenetInput);
-      this.uzenetGyereknek = this.uzenetInput
-      this.uzenetObjektum = new Uzenet('Szülő', this.uzenetGyereknek);
+      this.uzenetGyereknek = this.uzenetInput;
+      this.uzenetObjektum = new Uzenet("Szülő", this.uzenetGyereknek);
       this.uzenetlista.push(this.uzenetObjektum);
-      this.uzenetInput = '';
+      this.uzenetInput = "";
     },
-    uzenetFogadHandler(uzenet){
+    uzenetFogadHandler(uzenet) {
       this.uzenetGyerektol = uzenet.uzenet;
       this.uzenetlista.push(uzenet);
-    }
-  }, 
+    },
+  },
   computed: {
-    titleGyerekek(){
+    titleGyerekek() {
       let title = "";
       if (this.gyerekek.length == 0) {
         title = "Nincs gyerek";
-      } else if(this.gyerekek.length == 1) {
-        title = 'Gyerek'
-      }else {
-        title = 'Gyerekek'
+      } else if (this.gyerekek.length == 1) {
+        title = "Gyerek";
+      } else {
+        title = "Gyerekek";
       }
       return title;
-    }
-  }
+    },
+  },
 };
 </script>
 
-<style>
-</style>
+<style></style>
