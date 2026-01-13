@@ -25,6 +25,12 @@
 </template>
 
 <script>
+class Uzenet {
+  constructor(kicsoda = "", uzenet = ""){
+    this.kicsoda = kicsoda;
+    this.uzenet = uzenet;
+  }
+}
 export default {
   props:{
     kicsoda: {type: String, default: 'Valaki'},
@@ -39,7 +45,8 @@ export default {
     onClickUzenetKuldButton() {
       console.log("üzenet szülőnek", this.uzenetSzulonek);
       //Kiváltjuk az eseményt
-      this.$emit("uzenetEsemeny", this.uzenetSzulonek)
+      this.$emit("uzenetEsemeny", new Uzenet(this.kicsoda, this.uzenetSzulonek))
+      this.uzenetSzulonek = '';
       
     },
   },
