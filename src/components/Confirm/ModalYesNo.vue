@@ -7,7 +7,8 @@
   <!-- Modal -->
   <div
     class="modal fade"
-    :id="id"
+    
+    ref="modalYesNo"
     tabindex="-1"
     aria-labelledby="exampleModalLabel"
     aria-hidden="true"
@@ -19,9 +20,8 @@
           <button
             type="button"
             class="btn-close"
-            data-bs-dismiss="modal"
             aria-label="Close"
-            @click="$event.target.blur()"
+            @click="hide(); $event.target.blur()"
           ></button>
         </div>
         <div class="modal-body">
@@ -31,12 +31,16 @@
           <button
             type="button"
             class="btn btn-secondary"
-            data-bs-dismiss="modal"
-            @click="$event.target.blur()"
+            
+            @click="hide(); $event.target.blur()"
           >
             {{ noButton }}
           </button>
-          <button type="button" class="btn btn-primary">{{ yesButton }}</button>
+          <button type="button" class="btn btn-primary"
+            @click="onClickButtonYes(); $event.target.blur()"
+          >
+            {{ yesButton }}
+          </button>
         </div>
       </div>
     </div>
@@ -44,6 +48,7 @@
 </template>
 
 <script>
+import { Modal } from 'bootstrap';
 export default {
     name:'ModalYesNo',
     props:{
@@ -51,6 +56,27 @@ export default {
         yesButton: {type: String, default: 'Igen'},
         noButton: {type: String, default: 'Nem'},
         title: {type: String, default: 'Kérdés'}
+    },
+    data(){
+      return {
+        modal: null
+      }
+    },
+    methods:{
+      onClickButtonYes(){
+        this.$emit('csinalhatod');
+        this.hide()
+      },
+      show(){
+        this.modal.show();
+      },
+      hide(){
+        this.modal.hide();
+      },
+    },
+    mounted(){
+      //Ez akkor fut le, ha már betöltődött az oldal
+      this.modal = new Modal(this.$refs.modalYesNo);
     }
 
 };
