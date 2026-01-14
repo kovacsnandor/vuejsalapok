@@ -11,6 +11,7 @@
         <RouterLink to="/globaliscomponent">Globális komponens</RouterLink> | 
         <RouterLink to="/lokaliscomponent">Lokális komponens</RouterLink> | 
         <RouterLink to="/componentkommunikacio">Komponens kommunikáció</RouterLink> | 
+        <RouterLink to="/slot">Slot</RouterLink> | 
       </p>
         
     <!-- Ide töltődnek be az oldalak -->

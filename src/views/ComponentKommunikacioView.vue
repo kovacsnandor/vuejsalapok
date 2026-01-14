@@ -79,10 +79,7 @@ export default {
       uzenetGyerektol: "",
       uzenetlista: [],
       uzenetObjektum: new Uzenet(),
-      gyerekek: ["Pisti", 
-      // "Áron", 
-      // "Éva"
-    ],
+      gyerekek: ["Pisti", "Áron", "Éva"],
     };
   },
   methods: {
