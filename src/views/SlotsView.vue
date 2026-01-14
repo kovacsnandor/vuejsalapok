@@ -6,30 +6,40 @@
       Nyit csuk
     </ButtonOpenCloseModal> -->
 
-    
-    <button type="button" class="btn btn-primary"
-    @click="onClikcButtonEltuntetMegjelenit"
+    <button
+      type="button"
+      class="btn btn-primary"
+      @click="onClikcButtonEltuntetMegjelenit"
     >
-    <span v-if="szovegLatszik">Szöveg eltüntet</span>
-    <span  v-if="!szovegLatszik">Szöveg megjelenit</span>
-    
-  </button>
-  <p v-if="szovegLatszik">Ez egy szöveg</p>
+      {{ gombFelirat }}
+    </button>
+    <p v-if="szovegLatszik">Ez egy szöveg</p>
 
     <ModalYesNo
-    ref="modalYesNo"
-    :yesButton="'Yes'" 
-    :noButton="'No'" 
-    :title="'Akarod-e'"
-    @csinalhatod="csinalhatodHandler"
+      ref="modalYesNo"
+      :yesButton="'Yes'"
+      :noButton="'No'"
+      :title="'Akarod-e'"
+      @csinalhatod="csinalhatodHandler"
     >
-        <h5>Ez egy kédés</h5>
-        <ul>
-            <li>enni</li>
-            <li>inni</li>
-            <li>hazamenni</li>
-        </ul>
+      <div v-if="szovegLatszik">
+        <h5>Eltüntessem a szöveget?</h5>
+        <img :src="kep" alt="">
+        <i class="bi bi-trash3"></i>
+      </div>
+      <div v-if="!szovegLatszik">
+        <h5>Megjelenítsem a szöveget?</h5>
+        <img :src="kep" alt="">
+        <i class="bi bi-magic"></i>
+      </div>
     </ModalYesNo>
+    <img 
+      class="ms-2"
+      style="width:20px"
+      v-for="(tegla,index) in teglak" 
+      :key="index" 
+      :src="`pictures/${tegla}`" 
+      alt=""/>
   </div>
 </template>
 
@@ -38,24 +48,33 @@ import ModalYesNo from "@/components/Confirm/ModalYesNo.vue";
 import ButtonOpenCloseModal from "@/components/Confirm/ButtonOpenCloseModal.vue";
 export default {
   name: "SlotsView",
-  data(){
+  data() {
     return {
-      szovegLatszik: true
-    }
+      szovegLatszik: true,
+      kep: 'pictures/kep.jfif',
+      teglak: ['tegla.jpg','tegla.jpg','tegla.jpg']
+    };
   },
   components: {
     ModalYesNo,
     ButtonOpenCloseModal,
   },
   methods: {
-    onClikcButtonEltuntetMegjelenit(){
+    onClikcButtonEltuntetMegjelenit() {
       this.$refs.modalYesNo.show();
     },
-    csinalhatodHandler(){
-      this.szovegLatszik = ! this.szovegLatszik;
-
+    csinalhatodHandler() {
+      this.szovegLatszik = !this.szovegLatszik;
+    },
+  },
+  computed: {
+    gombFelirat(){
+      return this.szovegLatszik ?
+      'Szöveg eltüntet' 
+      :
+      'Szöveg megjelenit';
     }
-  }
+  },
 };
 </script>
 
