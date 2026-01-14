@@ -12,6 +12,7 @@
         <RouterLink to="/lokaliscomponent">Lokális komponens</RouterLink> | 
         <RouterLink to="/componentkommunikacio">Komponens kommunikáció</RouterLink> | 
         <RouterLink to="/slot">Slot</RouterLink> | 
+        <RouterLink to="/tegla">Tégla</RouterLink> | 
       </p>
         
     <!-- Ide töltődnek be az oldalak -->
