@@ -57,6 +57,17 @@ const router = createRouter({
       }
     },
     {
+      path: '/szorzo',
+      name: 'szorzo',
+      // route level code-splitting
+      // this generates a separate chunk (About.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import('@/views/SzorzoView.vue'),
+      meta:{
+        title: (route) => 'Szorzó'
+      }
+    },
+    {
       path: '/slot',
       name: 'slot',
       // route level code-splitting
