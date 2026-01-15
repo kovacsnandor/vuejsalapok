@@ -28,6 +28,9 @@ export const useCounterStore = defineStore("counter", {
     },
     reset(){
       this.counter = 0;
+    },
+    increaseDLength(){
+      this.desiredLength++;
     }
   },
 });
