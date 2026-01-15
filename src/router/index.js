@@ -89,6 +89,17 @@ const router = createRouter({
         title: (route) => 'Tégla'
       }
     },
+    {
+      path: '/inputcomponent',
+      name: 'inputcomponent',
+      // route level code-splitting
+      // this generates a separate chunk (About.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import('@/views/InputComponentView.vue'),
+      meta:{
+        title: (route) => 'Input komponens'
+      }
+    },
     { path: "/:pathMatch(.*)*", 
       name: "NotFound", 
       component: () => import('@/views/404.vue'),

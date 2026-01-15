@@ -14,6 +14,7 @@
         <RouterLink to="/szorzo">Szorzó</RouterLink> | 
         <RouterLink to="/slot">Slot</RouterLink> | 
         <RouterLink to="/tegla">Tégla</RouterLink> | 
+        <RouterLink to="/inputcomponent">Input komponens</RouterLink> | 
       </p>
         
     <!-- Ide töltődnek be az oldalak -->
