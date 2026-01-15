@@ -33,13 +33,6 @@
         <i class="bi bi-magic"></i>
       </div>
     </ModalYesNo>
-    <img 
-      class="ms-2"
-      style="width:20px"
-      v-for="(tegla,index) in teglak" 
-      :key="index" 
-      :src="`pictures/${tegla}`" 
-      alt=""/>
   </div>
 </template>
 
