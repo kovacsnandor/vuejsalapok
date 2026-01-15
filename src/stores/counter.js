@@ -1,12 +1,33 @@
-import { ref, computed } from 'vue'
-import { defineStore } from 'pinia'
+import { defineStore } from "pinia";
 
-export const useCounterStore = defineStore('counter', () => {
-  const count = ref(0)
-  const doubleCount = computed(() => count.value * 2)
-  function increment() {
-    count.value++
-  }
-
-  return { count, doubleCount, increment }
-})
+export const useCounterStore = defineStore("counter", {
+  //Ezek a változók
+  state: () => ({
+    counter: 0,
+    desiredLength: 4,
+  }),
+  //valamilyen formában visszaadja
+  getters: {
+    paddedCount() {
+      return this.counter.toString().padStart(this.desiredLength, "0"); //0015
+    },
+    // paddedCount: (state) => {
+    //   return state.counter.toString().padStart(state.desiredLength, "0");
+    // },
+  },
+  //csinál vele valamit
+  actions: {
+    addCount(number) {
+      this.counter += number;
+    },
+    doubleCount() {
+      this.counter = this.counter * 2;
+    },
+    increment() {
+      this.counter++;
+    },
+    reset(){
+      this.counter = 0;
+    }
+  },
+});
